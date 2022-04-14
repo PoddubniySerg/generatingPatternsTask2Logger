@@ -34,17 +34,19 @@ public class Main {
         String sizeStr = input.nextLine();
         try {
             listParams[0] = Integer.parseInt(sizeStr);
-            if (listParams[0] < 0) logger.log("Введено не положительное значение размера списка");
+            if (listParams[0] < 1) logger.log("Введено не положительное значение размера списка");
         } catch (Exception e) {
             logger.log("Введено некорректное значение, не являющееся целым числом для размера списка");
+            listParams[0] = -1;
         }
         System.out.print("Введите верхнюю границу для значений: ");
         String topValueStr = input.nextLine();
         try {
             listParams[1] = Integer.parseInt(topValueStr);
-            if (listParams[1] < 0) logger.log("Введено не положительное значение для верхней границы значений");
+            if (listParams[1] < 1) logger.log("Введено не положительное значение для верхней границы значений");
         } catch (Exception e) {
             logger.log("Введено некорректное значение, не являющееся целым числом для верхней границы значений");
+            listParams[1] = -1;
         }
         return listParams;
     }
